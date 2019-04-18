@@ -60,7 +60,7 @@ ax.set_yticks(y_vector)
 ax.set_yticklabels(psa_cost_eff_data['parameter'])
 ax.set_xlim(xmin, xmax)
 ax.set_ylim(0, max(y_vector) + 0.5)
-ax.set_title('Sensitivity of cost-effectiveness')
+ax.set_title('Sensitivity of cost-effectiveness analysis')
 ax.set_xlabel('ICER/GDP(31,364 USD)')
 labels3 = [str(x * -1) if x < 0 else str(x) for x in ax.get_xticks()]
 ax.set_xticklabels(labels3)
