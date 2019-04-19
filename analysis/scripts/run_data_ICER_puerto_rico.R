@@ -244,7 +244,7 @@ icer_data_all = data.frame(Specificity = screening_sp,
                        Sensitivity = screening_sen,
                        SP9 = country_pe9)
 
-unit_cost_vaccine = as.vector(seq(from=0,to=250,by = 5))
+unit_cost_vaccine = as.vector(seq(from=0,to=300,by = 5))
 ICER_QALY = matrix(data = 0, nrow = length(unit_cost_vaccine), ncol = nrow(icer_data_all))
 ICER_DALY = ICER_QALY
 
@@ -272,15 +272,10 @@ write_csv(x = icer_data, path = "../output/report_table_cost_effectiveness_QALY.
 ##===========================================================================#
 ## Save PSA data---------------------
 ##===========================================================================#
-country_pe9 = c(0.25,0.75)
-screening_sp = c(0.5,1.0)
-screening_sen = c(0.5,1.0)
-vax_cost = c(10,250)
-
 psa_data = data.frame(Specificity = c(0.5,1.0),
                       Sensitivity = c(0.5,1.0),
                       SP9 = c(0.25,0.75),
-                      vax_cost = c(10,250),
+                      vax_cost = c(10,300),
                       test_cost = c(1,20)) %>%
     gather(key = parameter, value = value) %>%
     group_by(parameter) %>%
@@ -322,6 +317,6 @@ for(i in 1:nrow(psa_data)){
 }
 
 psa_data$GDP = econ$gdp
-## I'm making a change
+
 ## Now, just save dataframe as a .csv file to create the figure in python :) 
 write_csv(x = psa_data, path = "../output/report_table_psa_results.csv")

@@ -17,7 +17,9 @@
 \usepackage{float}
 \usepackage{lineno}
 
-\linenumbers
+\newcommand{\R}[1]{\label{#1}\linelabel{#1}}
+\newcommand{\lr}[1]{~\lineref{#1}}
+
 \topmargin 0mm \oddsidemargin 2mm \evensidemargin 2mm \textwidth 160mm \textheight 578.201 pt
 
 \author{Guido España, Alex Perkins}
@@ -25,7 +27,9 @@
 \title{Cost-effectiveness of Dengvaxia in Puerto Rico}
 \begin{document}
 
+\linenumbers
 \maketitle
+
 
 \section{Introduction}
 Individuals who are seronegative at vaccination with CYD-TDV have an increased risk of severe dengue in their first dengue virus (DENV) infection \cite{Sridhar2018}. The World Health Organization (WHO) recommends a pre-vaccination screening to ensure that only those with previous exposure to DENV are vaccinated \cite{WHO2018}. However, rapid diagnostic tests with high sensitivity and specificity are not currently available. We have previously discussed the benefits and cost-effectiveness of pre-screening vaccination for economic scenarios of the Philippines and Brazil \cite{Espana2019Biorxiv}. Here, we discuss the implications of this strategy for Puerto Rico in terms of epidemiological benefits and cost-effectiveness.
@@ -50,7 +54,8 @@ Based on estimates from 2002 to 2010 \cite{Halasa2012}, we updated our assumptio
   \label{tbl-costs}
 \end{table}
 
-We then calculated the Incremental Cost-Effectiveness Ratio (ICER) as in equation \ref{eq-ICER}. As others have, we deemed the intervention cost-effective if the ICER was below 3 GDP per-Capita, and very cost-effective if the ICER fell below 1 GDP per-Capita. We assumed a baseline scenario of costs.
+
+We then calculated the Incremental Cost-Effectiveness Ratio (ICER) as in equation \ref{eq-ICER}. \R{Rev1Com2} As others have \cite{shim2017,shim2017b,flasche2016}, we deemed the intervention cost-effective if the ICER was below 3 GDP per-Capita, and very cost-effective if the ICER fell below 1 GDP per-Capita. We assumed a baseline scenario of costs.
 
 \begin{equation}
      ICER = \frac{Cost_{intervention} - Cost_{no-intervention}}
@@ -58,6 +63,7 @@ We then calculated the Incremental Cost-Effectiveness Ratio (ICER) as in equatio
      \label{eq-ICER}
 \end{equation}
 
+\R{Rev1Com3-1}Estimates of seroprevalence in Puerto Rico indicate that prevalence in 9-year-olds is around 50\%. Coudeville et al. estimated 50\% of prevalence  in 9-year-olds \cite{Coudeville2016} in the clinical trial sites. According to Argüello, 49.8\% of participants between 10-18 years of age had a positive IgG anti-DENV antibodies \cite{arguello2015AJTMH}. Hence, we assume that the seroprevalence in 9-year-olds is around 50\% but estimate the sensitivity of our analysis from 25\% to 75\%\R{Rev1Com3-2}. 
 
 \section{Results}
 \subsection{Epidemiological benefits from vaccination}
