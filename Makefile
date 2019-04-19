@@ -72,3 +72,6 @@ cleanFigs:
 
 cleanTex:
 	rm -fv $(PDF_FILES)
+
+cleanJunk:
+	(cd $(PDF_DIR); rm -fv *.log; rm -fv *.out; rm -fv *.blg; rm -rfv _region_.*; rm -fv *.aux; rm -rfv auto)
