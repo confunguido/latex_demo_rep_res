@@ -11,3 +11,4 @@
 **/*.blg
 **/*.Rout
 **/*.RData
+**/*.DS_Store
