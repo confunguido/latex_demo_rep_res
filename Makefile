@@ -63,7 +63,6 @@ $(PDF_DIR)/$(BIB_FILE): $(MASTER_BIB)
 ##==============================================================================#
 clean:
 	rm -fv $(DATA_OUT); rm -fv $(FIG_FILES); rm -fv $(PDF_FILES)
-
 cleanData:
 	rm -fv $(DATA_OUT)
 

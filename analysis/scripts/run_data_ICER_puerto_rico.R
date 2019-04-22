@@ -276,7 +276,7 @@ psa_data = data.frame(Specificity = c(0.5,1.0),
                       Sensitivity = c(0.5,1.0),
                       SP9 = c(0.25,0.75),
                       vax_cost = c(10,300),
-                      test_cost = c(1,20)) %>%
+                      test_cost = c(1,50)) %>%
     gather(key = parameter, value = value) %>%
     group_by(parameter) %>%
     summarize(min = min(value), max = max(value)) %>%
