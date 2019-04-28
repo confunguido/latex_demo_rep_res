@@ -1,7 +1,7 @@
 
-R version 3.5.3 (2019-03-11) -- "Great Truth"
-Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-redhat-linux-gnu (64-bit)
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -28,13 +28,16 @@ Type 'q()' to quit R.
 > library(RColorBrewer)
 > library(tidyverse)
 ── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
-✔ ggplot2 3.1.1       ✔ purrr   0.3.2  
+✔ ggplot2 3.0.0       ✔ purrr   0.2.5  
 ✔ tibble  2.1.1       ✔ dplyr   0.8.0.1
-✔ tidyr   0.8.3       ✔ stringr 1.4.0  
-✔ readr   1.3.1       ✔ forcats 0.4.0  
+✔ tidyr   0.8.1       ✔ stringr 1.3.1  
+✔ readr   1.1.1       ✔ forcats 0.3.0  
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
+Warning messages:
+1: package ‘tibble’ was built under R version 3.5.2 
+2: package ‘dplyr’ was built under R version 3.5.2 
 > library(randomForest)
 randomForest 4.6-14
 Type rfNews() to see new features/changes/bug fixes.
@@ -59,7 +62,7 @@ The following object is masked from ‘package:dplyr’:
 
     collapse
 
-This is mgcv 1.8-27. For overview type 'help("mgcv-package")'.
+This is mgcv 1.8-24. For overview type 'help("mgcv-package")'.
 > 
 > set.seed(123)
 > ##===========================================================================#
@@ -326,7 +329,7 @@ This is mgcv 1.8-27. For overview type 'help("mgcv-package")'.
 > psa_data = data.frame(Specificity = c(0.5,1.0),
 +                       Sensitivity = c(0.5,1.0),
 +                       SP9 = c(0.25,0.75),
-+                       vax_cost = c(10,300),
++                       vax_cost = c(10,100),
 +                       test_cost = c(1,50)) %>%
 +     gather(key = parameter, value = value) %>%
 +     group_by(parameter) %>%
@@ -374,4 +377,4 @@ This is mgcv 1.8-27. For overview type 'help("mgcv-package")'.
 > 
 > proc.time()
    user  system elapsed 
- 17.817   1.192  24.206 
+ 40.059   4.906  47.306 

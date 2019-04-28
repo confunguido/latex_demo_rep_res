@@ -51,7 +51,7 @@ $(PDF_DIR)/manuscript_latex_demo.pdf: $(PDF_DIR)/$(TEX_MASTER).tex $(DATA_OUT) $
 $(PDF_DIR)/table_ICER_psa.tex: $(SRC_DIR)/table_ICER_psa.R $(DATA_OUT)
 	(cd $(SRC_DIR); R CMD BATCH $(<F))
 
-$(PDF_DIR)/$(TEX_MASTER).docx: $(PDF_DIR)/manuscript_latex_demo.tex
+$(PDF_DIR)/$(TEX_MASTER).docx: $(PDF_DIR)/$(TEX_MASTER).tex $(PDF_DIR)/$(TEX_MASTER).pdf
 	(cd $(PDF_DIR); pandoc $(<F) -o $(@F) $(PANDOC_FLAGS))
 
 ## Always copy the master bib file
