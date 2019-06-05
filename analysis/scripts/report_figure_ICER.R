@@ -11,7 +11,7 @@ library(grDevices)
 icer_data = read_csv("../output/report_table_cost_effectiveness_QALY.csv")
 
 jpeg('../figures/report_figure_ICER.jpeg',
-     width=5,height=5,units='in',res=300)
+     width=5.5,height=5.5,units='in',res=300)
 plot(icer_data$vaccine_cost, icer_data$BothHigh, type = "l", col = "black",
      main = "Cost-effectiveness", ylab = "ICER", xlab = "Vaccine (USD)",
      ylim = c(0,3*icer_data$gdp[1]))
