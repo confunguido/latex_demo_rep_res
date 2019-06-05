@@ -3,7 +3,7 @@
 ## Gather all the data and generate figures & tables automatically
 
 all: data figs manuscript
-
+CURRENT_DIR := $(shell pwd)
 ##==============================================================================#
 ## 1. First, collect the data 
 ##==============================================================================#
@@ -39,7 +39,13 @@ PDF_FILES := $(PDF_DIR)/$(TEX_MASTER).pdf
 DOC_REF := demo_template.docx
 BIB_FILE := Guido_Postdoc_Literature.bib
 MASTER_BIB := ~/Dropbox/Literature/Guido_Postdoc_Literature.bib
-PANDOC_FLAGS := --filter pandoc-citeproc --csl ~/Dropbox/Literature/style_files/plos-computational-biology.csl	--reference-doc $(DOC_REF) --mathml --bibliography=$(BIB_FILE)
+PANDOC_NUM_DIR := $(CURRENT_DIR)/pandoc
+EQ_FILTER := $(PANDOC_NUM_DIR)/pandoc_eqnos_tex.py
+TBL_FILTER := $(PANDOC_NUM_DIR)/pandoc_tablenos_tex.py
+FIG_FILTER := $(PANDOC_NUM_DIR)/pandoc_fignos_tex.py
+BIB_STYLE := ~/Dropbox/Literature/style_files/plos-computational-biology.csl
+
+PANDOC_FLAGS := --filter pandoc-citeproc --csl $(BIB_STYLE) --reference-doc $(DOC_REF) --mathml --bibliography=$(BIB_FILE) --filter $(EQ_FILTER) --filter $(TBL_FILTER) --filter $(FIG_FILTER) -M reference-section-title=References
 
 manuscript: $(PDF_FILES) $(PDF_DIR)/$(TEX_MASTER).docx
 
